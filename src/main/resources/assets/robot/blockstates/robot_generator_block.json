@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "robot:block/robot_generator_block"
+    }
+  }
+}
