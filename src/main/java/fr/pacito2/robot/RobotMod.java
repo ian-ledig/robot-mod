@@ -14,7 +14,7 @@ public class RobotMod implements ModInitializer {
 
     public static ItemGroup ITEMGROUP = FabricItemGroupBuilder.build(
             new Identifier("robot", "item_group"),
-            () -> new ItemStack(Item.BLOCK_ITEMS.get(ListBlock.ROBOT_GENERATOR)));
+            () -> new ItemStack(Item.BLOCK_ITEMS.get(ListBlock.BLOCK_ROBOT_GENERATOR)));
 
     @Override
     public void onInitialize() {

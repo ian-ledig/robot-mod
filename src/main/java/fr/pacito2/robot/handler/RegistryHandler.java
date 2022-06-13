@@ -12,6 +12,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +27,7 @@ public class RegistryHandler {
         {
             Registry.register(Registry.BLOCK, id, ListBlock.BLOCKS.get(id));
         }
+
         LOGGER.info(RobotMod.MOD_ID + " blocks registered");
     }
 
@@ -40,7 +42,12 @@ public class RegistryHandler {
 
     public static void registerEntities()
     {
-        FabricDefaultAttributeRegistry.register(ListEntity.ROBOT, EntityRobot.createMobAttributes());
+        // Robot
+        FabricDefaultAttributeRegistry.register(ListEntity.ROBOT, EntityRobot.createMobAttributes()
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 100)
+               // .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1)
+        );
 
         LOGGER.info(RobotMod.MOD_ID + " entities registered");
     }

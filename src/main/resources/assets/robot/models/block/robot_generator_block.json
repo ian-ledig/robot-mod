@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "robot:block/side",
   "textures": {
-    "all": "robot:block/robot_generator_block"
+    "bottom": "robot:block/robot_generator_block",
+    "top": "robot:block/robot_generator_block",
+    "side": "robot:block/robot_generator_block"
   }
 }
