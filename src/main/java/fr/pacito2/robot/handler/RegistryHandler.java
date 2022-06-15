@@ -2,8 +2,8 @@ package fr.pacito2.robot.handler;
 
 import fr.pacito2.robot.RobotMod;
 import fr.pacito2.robot.entity.EntityRobot;
-import fr.pacito2.robot.entity.model.EntityModelRobot;
-import fr.pacito2.robot.entity.renderer.EntityRendererRobot;
+import fr.pacito2.robot.entity.client.model.EntityModelRobot;
+import fr.pacito2.robot.entity.client.renderer.EntityRendererRobot;
 import fr.pacito2.robot.util.ListBlock;
 import fr.pacito2.robot.util.ListBlockEntity;
 import fr.pacito2.robot.util.ListEntity;
@@ -54,7 +54,7 @@ public class RegistryHandler {
         FabricDefaultAttributeRegistry.register(ListEntity.ROBOT, EntityRobot.createMobAttributes()
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 100)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2)
         );
 
         LOGGER.info(RobotMod.MOD_ID + " entities registered");
@@ -63,7 +63,7 @@ public class RegistryHandler {
     @Environment(EnvType.CLIENT)
     public static void registerRenderersAndModels(){
         EntityRendererRegistry.register(ListEntity.ROBOT, EntityRendererRobot::new);
-        EntityModelLayerRegistry.registerModelLayer(ListEntity.MODEL_LAYER_ROBOT, EntityModelRobot::getTexturedModelData);
+        //EntityModelLayerRegistry.registerModelLayer(ListEntity.MODEL_LAYER_ROBOT, EntityModelRobot::getTexturedModelData);
 
         LOGGER.info(RobotMod.MOD_ID + " entities renders and models registered");
     }
