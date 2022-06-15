@@ -1,6 +1,6 @@
 package fr.pacito2.robot.block.blockentity;
 
-import fr.pacito2.robot.util.ListBlock;
+import fr.pacito2.robot.util.ListBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -15,7 +15,7 @@ public class BlockEntityRobotGenerator extends BlockEntity {
     private int robot = 5;
 
     public BlockEntityRobotGenerator(BlockPos pos, BlockState state) {
-        super(ListBlock.BLOCK_ENTITY_ROBOT_GENERATOR, pos, state);
+        super(ListBlockEntity.BLOCK_ENTITY_ROBOT_GENERATOR, pos, state);
     }
 
     @Override

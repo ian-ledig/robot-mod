@@ -5,6 +5,7 @@ import fr.pacito2.robot.entity.EntityRobot;
 import fr.pacito2.robot.entity.model.EntityModelRobot;
 import fr.pacito2.robot.entity.renderer.EntityRendererRobot;
 import fr.pacito2.robot.util.ListBlock;
+import fr.pacito2.robot.util.ListBlockEntity;
 import fr.pacito2.robot.util.ListEntity;
 import fr.pacito2.robot.util.ListItem;
 import net.fabricmc.api.EnvType;
@@ -23,9 +24,16 @@ public class RegistryHandler {
 
     public static void registerBlocks()
     {
+        // Blocks
         for (Identifier id : ListBlock.BLOCKS.keySet())
         {
             Registry.register(Registry.BLOCK, id, ListBlock.BLOCKS.get(id));
+        }
+
+        // Blocks entities
+        for (Identifier id : ListBlockEntity.BLOCKS_ENTITY.keySet())
+        {
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, id, ListBlockEntity.BLOCKS_ENTITY.get(id));
         }
 
         LOGGER.info(RobotMod.MOD_ID + " blocks registered");
@@ -46,7 +54,7 @@ public class RegistryHandler {
         FabricDefaultAttributeRegistry.register(ListEntity.ROBOT, EntityRobot.createMobAttributes()
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 100)
-               // .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1)
         );
 
         LOGGER.info(RobotMod.MOD_ID + " entities registered");

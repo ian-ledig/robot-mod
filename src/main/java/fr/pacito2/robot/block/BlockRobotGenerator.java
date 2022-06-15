@@ -3,6 +3,7 @@ package fr.pacito2.robot.block;
 import fr.pacito2.robot.RobotMod;
 import fr.pacito2.robot.block.blockentity.BlockEntityRobotGenerator;
 import fr.pacito2.robot.util.ListBlock;
+import fr.pacito2.robot.util.ListBlockEntity;
 import fr.pacito2.robot.util.ListItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -76,6 +77,6 @@ public class BlockRobotGenerator extends HorizontalFacingBlockWithEntity impleme
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ListBlock.BLOCK_ENTITY_ROBOT_GENERATOR, BlockEntityRobotGenerator::tick);
+        return checkType(type, ListBlockEntity.BLOCK_ENTITY_ROBOT_GENERATOR, BlockEntityRobotGenerator::tick);
     }
 }
