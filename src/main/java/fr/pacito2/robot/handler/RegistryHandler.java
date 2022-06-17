@@ -2,16 +2,13 @@ package fr.pacito2.robot.handler;
 
 import fr.pacito2.robot.RobotMod;
 import fr.pacito2.robot.entity.EntityRobot;
-import fr.pacito2.robot.entity.client.model.EntityModelRobot;
 import fr.pacito2.robot.entity.client.renderer.EntityRendererRobot;
-import fr.pacito2.robot.util.ListBlock;
-import fr.pacito2.robot.util.ListBlockEntity;
-import fr.pacito2.robot.util.ListEntity;
-import fr.pacito2.robot.util.ListItem;
+import fr.pacito2.robot.screen.ScreenRobot;
+import fr.pacito2.robot.util.*;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.util.Identifier;
@@ -63,8 +60,14 @@ public class RegistryHandler {
     @Environment(EnvType.CLIENT)
     public static void registerRenderersAndModels(){
         EntityRendererRegistry.register(ListEntity.ROBOT, EntityRendererRobot::new);
-        //EntityModelLayerRegistry.registerModelLayer(ListEntity.MODEL_LAYER_ROBOT, EntityModelRobot::getTexturedModelData);
 
         LOGGER.info(RobotMod.MOD_ID + " entities renders and models registered");
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerScreens(){
+        ScreenRegistry.register(ListScreen.SCREEN_HANDLER_ROBOT, ScreenRobot::new);
+
+        LOGGER.info(RobotMod.MOD_ID + " screens registered");
     }
 }

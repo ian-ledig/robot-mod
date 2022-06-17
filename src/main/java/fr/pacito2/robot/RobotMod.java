@@ -1,12 +1,15 @@
 package fr.pacito2.robot;
 
 import fr.pacito2.robot.handler.RegistryHandler;
+import fr.pacito2.robot.screen.ScreenHandlerRobot;
 import fr.pacito2.robot.util.ListBlock;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 
 public class RobotMod implements ModInitializer {

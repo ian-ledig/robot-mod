@@ -11,5 +11,6 @@ public class RobotModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         RegistryHandler.registerRenderersAndModels();
+        RegistryHandler.registerScreens();
     }
 }
